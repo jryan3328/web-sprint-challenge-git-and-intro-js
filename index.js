@@ -219,7 +219,7 @@ console.log(artists[2].bio);
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Fix this issue and console.log() to check your work. */
 
-// artists.name[8] = 'Vincent Van Gough';
+ artists[8].name = 'Vincent Van Gogh';
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
 Use getArtistByIndex to do the following:
@@ -230,8 +230,8 @@ Use getArtistByIndex to do the following:
 
 🌟 EXAMPLE: if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex(artists, index) {
-  return `the artist at index ${index} is ${artists[index].name}`
+function getArtistByIndex(array, number) {
+  return `the artist at index ${array.indexOf(number) +1} is ${array[number]['name']}`;
 }
 
 
@@ -245,7 +245,10 @@ Use listOfNames to do the following:
 */
 
 function listOfNames(artists) {
-  let newArray = '';
+  const artistNames = artists.slice();
+  for(let i = 0; i < artistNames.length; i++){
+    return artistNames.name;
+  }
 }
 
 
@@ -259,10 +262,12 @@ Use removeArtist to do the following:
 5. Return the resulting copied array
 🌟 EXAMPLE: if removeArtist is invoked with the artists array and the number 0, it will return the resulting array with Amedeo Modigliani removed from our dataset. */
 
-function removeArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function removeArtist(array, index) {
+  const arrayOne = artists.slice();
+  delete array[index];
+  return arrayOne;
 }
-
+removeArtist(artists, 0);
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -281,13 +286,18 @@ Use addArtist to do the following:
 5. Add the newly created object to the copied array, then return the copied array
 🌟 EXAMPLE: Invoking addArtist(artists, 'John Doe', '1988-2022', 'Full Stack Development', 'African American', 'I have a background in customer service at Big Retail Chain. I am attending BloomTech to become a Frontend Developer.') should return the artists array with the above object added to the end of the array. */
 
-function addArtist(artists) {
-  let newArray = {name: 'Jonathan Ryan', years: '1986-2023', genre: 'Web Design', nationality: 'American', bio: 'I love my family, tech and dogs.'}
-  artists.push(newArray);
-  return artists;
-}
-console.log(artists);
+function addArtist(artists, name, years, genre, nationality) {
+  
+  
 
+  const newArtist = [{
+    name: 'Jonathan',
+    years: '1986-present',
+    genre: 'Web-Design',
+    nationality: 'Murican'
+  }];
+
+}
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use lotsOfArt to do the following: 
@@ -298,8 +308,10 @@ Use lotsOfArt to do the following:
 */
 
 function lotsOfArt(artists) {
-  for(let artists = 0; artists.paintings > 100;){
-    return artists.name;
+  for (let paintings in artists){
+    if(artists.paintings > 100){
+      return n.name;
+    }
   }
 }
 
@@ -315,7 +327,7 @@ Use artistInfo to do the following:
   "Frida Kahlo de Rivera (Spanish pronunciation: [ˈfɾiða ˈkalo]; born Magdalena Carmen Frida Kahlo y Calderón; 6 July 1907 – 13 July 1954) was a Mexican artist who painted many portraits, self-portraits and works inspired by the nature and artifacts of Mexico. Inspired by the country's popular culture, she employed a naïve folk art style to explore questions of identity, postcolonialism, gender, class and race in Mexican society. Her paintings often had strong autobiographical elements and mixed realism with fantasy. In addition to belonging to the post-revolutionary Mexicayotl movement, which sought to define a Mexican identity, Kahlo has been described as a surrealist or magical realist.Born to a German father and a mestiza mother, Kahlo spent most of her childhood and adult life at her family home in Coyoacán, La Casa Azul, now known and publicly accessible as the Frida Kahlo Museum. She was disabled by polio as a child. Until a traffic accident at age eighteen caused lifelong pain and medical problems, she had been a promising student headed for medical school. During her recovery, she returned to her childhood hobby of art with the idea of becoming an artist."
 */
 
-function artistInfo(/*Your Code Here*/){
+function artistInfo(){
   /*Your Code Here*/
 }
 
