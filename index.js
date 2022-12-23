@@ -244,10 +244,11 @@ Use listOfNames to do the following:
 🌟 EXAMPLE of return: ["Amedeo Modigliani", "Vasiliy Kandinskiy", "Diego Rivera"....]
 */
 
-function listOfNames(artists) {
-  const artistNames = artists.slice();
+function listOfNames(array) {
+  const artistNames = array.slice();
   for(let i = 0; i < artistNames.length; i++){
-    return artistNames.name;
+    const nameOnly = Object.values(artistNames[i]['name']);
+    return nameOnly;
   }
 }
 
@@ -286,17 +287,20 @@ Use addArtist to do the following:
 5. Add the newly created object to the copied array, then return the copied array
 🌟 EXAMPLE: Invoking addArtist(artists, 'John Doe', '1988-2022', 'Full Stack Development', 'African American', 'I have a background in customer service at Big Retail Chain. I am attending BloomTech to become a Frontend Developer.') should return the artists array with the above object added to the end of the array. */
 
-function addArtist(artists, name, years, genre, nationality) {
+function addArtist(array, str1, str2, str3, str4, str5) {
   
   
 
-  const newArtist = [{
-    name: 'Jonathan',
-    years: '1986-present',
-    genre: 'Web-Design',
-    nationality: 'Murican'
-  }];
-
+  const newArtist = array.slice(); 
+  const newEntry = {
+    name: `${str1}`,
+    years: `${str2}`,
+    genre: `${str3}`,
+    nationality: `${str4}`,
+    bio: `${str5}`
+  }
+newArtist.push(newEntry);
+return newArtist;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
